@@ -1,0 +1,203 @@
+{
+	"categories": [
+		{
+			"uuid": "976a3c30-86c9-433b-8cb7-2057405d57eb",
+			"title": "Administration",
+			"color": "70bafa"
+		},
+		{
+			"uuid": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"title": "Backend",
+			"color": "cc8f1b"
+		},
+		{
+			"uuid": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"title": "Playing the game",
+			"color": "5822e2"
+		},
+		{
+			"uuid": "6012dccf-4110-4b3b-96f1-159c9197c831",
+			"title": "Design Work",
+			"color": "e0dd08"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "56175b6b-2f86-49e6-b106-2f032efb2da9",
+			"title": "Todo",
+			"tasks": [
+				"5f637ee1-1e6a-49c0-8911-a924403e2f75",
+				"371b4b4b-2534-4e42-bd2a-f5c5058163dd",
+				"5e46a162-8231-44e2-99e1-2cd166f39f4a",
+				"e4e738f1-c267-4df9-a6c2-bff0d7a99ccc",
+				"971df27b-30a7-46b6-a02a-fffe6bfbd64d",
+				"919ae30e-a07b-4e83-9563-a7c85c7cba29",
+				"547a9c7f-e16f-4381-8fa7-c224f24c7c26",
+				"fba5884e-ad23-4085-93e4-0d6788fb558d",
+				"8269ded5-fd0e-44fb-9d89-3ae77fb0bb2b",
+				"79b840b2-6fc2-4e98-9a3e-45d1408269ed",
+				"dcbfa230-0494-4913-8a3f-6c6b87a683ef",
+				"bd4aafd9-b191-4fcc-a58e-bd049974ef00",
+				"f00a2ca7-d46a-4cef-98e1-eea1528896a3",
+				"7ffb6e1e-6296-48fb-a681-73aba0550559"
+			]
+		},
+		{
+			"uuid": "2312e9a8-a088-4669-9c1c-dc59d2991d85",
+			"title": "Doing",
+			"tasks": [
+				"f9c11be6-bfe9-4cbf-9c9d-1a673ed2bacc",
+				"3e38b957-6e26-4e8b-9b6b-c79e72115c51"
+			]
+		},
+		{
+			"uuid": "f910352f-acc3-4092-94b3-025a9c688476",
+			"title": "Done",
+			"tasks": [
+				"ddc76966-1f8a-4008-8274-f2ac1c92353f",
+				"641726db-5e08-497d-adcb-e57b4631d983"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "ddc76966-1f8a-4008-8274-f2ac1c92353f",
+			"title": "Create Card Front",
+			"description": "",
+			"category": "6012dccf-4110-4b3b-96f1-159c9197c831",
+			"steps": []
+		},
+		{
+			"uuid": "641726db-5e08-497d-adcb-e57b4631d983",
+			"title": "Create Card Back",
+			"description": "",
+			"category": "6012dccf-4110-4b3b-96f1-159c9197c831",
+			"steps": []
+		},
+		{
+			"uuid": "371b4b4b-2534-4e42-bd2a-f5c5058163dd",
+			"title": "Create Users Table",
+			"description": "",
+			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"steps": []
+		},
+		{
+			"uuid": "5e46a162-8231-44e2-99e1-2cd166f39f4a",
+			"title": "Create Cards Table",
+			"description": "",
+			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"steps": []
+		},
+		{
+			"uuid": "e4e738f1-c267-4df9-a6c2-bff0d7a99ccc",
+			"title": "Create User Cards Table",
+			"description": "",
+			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"steps": []
+		},
+		{
+			"uuid": "971df27b-30a7-46b6-a02a-fffe6bfbd64d",
+			"title": "Create Packs Table",
+			"description": "",
+			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"steps": []
+		},
+		{
+			"uuid": "919ae30e-a07b-4e83-9563-a7c85c7cba29",
+			"title": "Create Decks Table",
+			"description": "",
+			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"steps": []
+		},
+		{
+			"uuid": "5f637ee1-1e6a-49c0-8911-a924403e2f75",
+			"title": "Create Database",
+			"description": "",
+			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"steps": []
+		},
+		{
+			"uuid": "547a9c7f-e16f-4381-8fa7-c224f24c7c26",
+			"title": "Create Home Page",
+			"description": "",
+			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"steps": []
+		},
+		{
+			"uuid": "fba5884e-ad23-4085-93e4-0d6788fb558d",
+			"title": "Create Navigation",
+			"description": "",
+			"category": "976a3c30-86c9-433b-8cb7-2057405d57eb",
+			"steps": []
+		},
+		{
+			"uuid": "8269ded5-fd0e-44fb-9d89-3ae77fb0bb2b",
+			"title": "Create Card View page",
+			"description": "",
+			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"steps": []
+		},
+		{
+			"uuid": "79b840b2-6fc2-4e98-9a3e-45d1408269ed",
+			"title": "Make the Card Fronts Change Dynamically based on selected card",
+			"description": "",
+			"category": "6012dccf-4110-4b3b-96f1-159c9197c831",
+			"steps": []
+		},
+		{
+			"uuid": "dcbfa230-0494-4913-8a3f-6c6b87a683ef",
+			"title": "Create Deck Building / Editing page",
+			"description": "",
+			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"steps": []
+		},
+		{
+			"uuid": "bd4aafd9-b191-4fcc-a58e-bd049974ef00",
+			"title": "Create Game Board",
+			"description": "",
+			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"steps": []
+		},
+		{
+			"uuid": "f00a2ca7-d46a-4cef-98e1-eea1528896a3",
+			"title": "Create holographic element",
+			"description": "",
+			"category": "6012dccf-4110-4b3b-96f1-159c9197c831",
+			"steps": []
+		},
+		{
+			"uuid": "7ffb6e1e-6296-48fb-a681-73aba0550559",
+			"title": "Leaderboards",
+			"description": "",
+			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"steps": []
+		},
+		{
+			"uuid": "f9c11be6-bfe9-4cbf-9c9d-1a673ed2bacc",
+			"title": "Activate Git repo",
+			"description": "",
+			"category": "976a3c30-86c9-433b-8cb7-2057405d57eb",
+			"steps": []
+		},
+		{
+			"uuid": "3e38b957-6e26-4e8b-9b6b-c79e72115c51",
+			"title": "Convince Colton to help",
+			"description": "",
+			"category": "976a3c30-86c9-433b-8cb7-2057405d57eb",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"56175b6b-2f86-49e6-b106-2f032efb2da9"
+			],
+			[
+				"2312e9a8-a088-4669-9c1c-dc59d2991d85"
+			],
+			[
+				"f910352f-acc3-4092-94b3-025a9c688476"
+			]
+		]
+	}
+}

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dnptpj4q0ps7p"]
+
+[ext_resource type="Texture2D" uid="uid://ck5rhjb1nl3c7" path="res://graphics/doe_icons/doe_backicon.png" id="1_l6cm7"]
+
+[node name="Main Menu" type="Control" unique_id=874272033]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -232.0
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DoeBackicon" type="Sprite2D" parent="." unique_id=794481451]
+position = Vector2(628.00006, 212.00002)
+scale = Vector2(0.30908197, 0.30908197)
+texture = ExtResource("1_l6cm7")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=856192723]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 159.0
+offset_top = 272.0
+offset_right = 311.0
+offset_bottom = 377.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://yiwklwufb0qf"]
+
+[ext_resource type="FontFile" uid="uid://hpq3qmqok3ck" path="res://graphics/fonts/RuneScape-Fonts/otf/RuneScape-Bold-12.otf" id="1_ovcy6"]
+
+[resource]
+default_font = ExtResource("1_ovcy6")
+default_font_size = 26
