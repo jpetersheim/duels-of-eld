@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d2nqeonbc3q1n"]
+
+[ext_resource type="PackedScene" uid="uid://cln0452cydmmo" path="res://zz_scenes_first/card_front.tscn" id="1_6u4wf"]
+[ext_resource type="Script" uid="uid://bg1n4kvt0e7wg" path="res://zz_scenes_first/card.gd" id="1_ktuci"]
+[ext_resource type="PackedScene" uid="uid://dsgf308bac55w" path="res://zz_scenes_first/card_back.tscn" id="2_ktuci"]
+
+[node name="Card" type="Control" unique_id=890107506]
+custom_minimum_size = Vector2(288, 408)
+custom_maximum_size = Vector2(288, 408)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+script = ExtResource("1_ktuci")
+
+[node name="CardBack" parent="." unique_id=1917187597 instance=ExtResource("2_ktuci")]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 408.0
+
+[node name="CardFront" parent="." unique_id=390498546 instance=ExtResource("1_6u4wf")]
+layout_mode = 0

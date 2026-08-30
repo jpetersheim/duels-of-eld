@@ -32,23 +32,23 @@ default_font_size = 14
 default_font = ExtResource("6_na6li")
 default_font_size = 12
 
-[node name="CardBack" type="Node2D" unique_id=390498546]
-
-[node name="Control" type="Control" parent="." unique_id=1171633459]
+[node name="CardFront" type="Control" unique_id=1171633459]
 custom_minimum_size = Vector2(288, 408)
 custom_maximum_size = Vector2(288, 408)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 288.0
 offset_bottom = 408.0
+pivot_offset = Vector2(144, 204)
+mouse_filter = 2
 
-[node name="Background" type="TextureRect" parent="Control" unique_id=654741455]
+[node name="Background" type="TextureRect" parent="." unique_id=654741455]
 layout_mode = 0
 offset_right = 288.0
 offset_bottom = 408.0
 texture = ExtResource("1_iac8h")
 
-[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=895648187]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=895648187]
 layout_mode = 0
 offset_right = 288.0
 offset_bottom = 408.0
@@ -57,18 +57,19 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=1965615230]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1965615230]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Header" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1268993755]
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1268993755]
 layout_mode = 2
 
-[node name="TitleLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/Header" unique_id=1830527080]
+[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Header" unique_id=1830527080]
 custom_minimum_size = Vector2(0, 48)
 custom_maximum_size = Vector2(200, 48)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme = ExtResource("2_j3eym")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("3_pi8jx")
@@ -79,17 +80,19 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer/VBoxContainer/Header" unique_id=1640680004]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/Header" unique_id=1640680004]
 custom_minimum_size = Vector2(50, 30)
 custom_maximum_size = Vector2(50, 30)
 layout_mode = 2
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpyuh")
 
-[node name="TierLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/Header/PanelContainer" unique_id=1525840695]
+[node name="TierLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Header/PanelContainer" unique_id=1525840695]
 custom_minimum_size = Vector2(0, 48)
 custom_maximum_size = Vector2(200, 48)
 layout_mode = 2
+mouse_filter = 1
 theme = SubResource("Theme_fis0m")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("3_pi8jx")
@@ -101,7 +104,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Card Art" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=337173609]
+[node name="Card Art" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=337173609]
 custom_minimum_size = Vector2(248, 180)
 custom_maximum_size = Vector2(248, 180)
 layout_mode = 2
@@ -110,21 +113,22 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Card Art" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/Card Art" unique_id=1242140579]
+[node name="Card Art" type="TextureRect" parent="MarginContainer/VBoxContainer/Card Art" unique_id=1242140579]
 custom_minimum_size = Vector2(240, 148)
 custom_maximum_size = Vector2(240, 148)
 layout_mode = 2
 texture = ExtResource("4_rpb2e")
 stretch_mode = 5
 
-[node name="Illustrator" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1163833055]
+[node name="Illustrator" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1163833055]
 layout_mode = 2
 theme_override_constants/margin_top = 4
 
-[node name="Illustrator" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/Illustrator" unique_id=1265787782]
+[node name="Illustrator" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Illustrator" unique_id=1265787782]
 custom_minimum_size = Vector2(0, 8)
 custom_maximum_size = Vector2(-1, 8)
 layout_mode = 2
+mouse_filter = 1
 theme = SubResource("Theme_60xd1")
 theme_override_colors/default_color = Color(0.30980393, 0.24705882, 0.18431373, 1)
 text = "Illustrator"
@@ -132,15 +136,16 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 2
 
-[node name="Stats" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=60396524]
+[node name="Stats" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=60396524]
 layout_mode = 2
 theme_override_constants/margin_top = 4
 
-[node name="StatsLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/Stats" unique_id=295307447]
+[node name="StatsLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Stats" unique_id=295307447]
 custom_minimum_size = Vector2(0, 44)
 custom_maximum_size = Vector2(-1, 44)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme = ExtResource("2_j3eym")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("3_pi8jx")
@@ -152,20 +157,21 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="MetaBox" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=154150894]
+[node name="MetaBox" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=154150894]
 custom_minimum_size = Vector2(248, 88)
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/MetaBox" unique_id=1646087826]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MetaBox" unique_id=1646087826]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Card Meta" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/MetaBox/VBoxContainer" unique_id=376875437]
+[node name="Card Meta" type="RichTextLabel" parent="MarginContainer/VBoxContainer/MetaBox/VBoxContainer" unique_id=376875437]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_sh855")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("3_pi8jx")
@@ -176,9 +182,10 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="Card Description" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/MetaBox/VBoxContainer" unique_id=304451734]
+[node name="Card Description" type="RichTextLabel" parent="MarginContainer/VBoxContainer/MetaBox/VBoxContainer" unique_id=304451734]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_5caxw")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("3_pi8jx")
@@ -189,19 +196,20 @@ scroll_active = false
 autowrap_mode = 2
 vertical_alignment = 1
 
-[node name="Footer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=821880137]
+[node name="Footer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=821880137]
 layout_mode = 2
 theme_override_constants/margin_top = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/Footer" unique_id=1744308130]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Footer" unique_id=1744308130]
 custom_minimum_size = Vector2(248, 0)
 custom_maximum_size = Vector2(248, -1)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="CardSet" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/Footer/HBoxContainer" unique_id=755773161]
+[node name="CardSet" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Footer/HBoxContainer" unique_id=755773161]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_sh855")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("3_pi8jx")
@@ -212,9 +220,10 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="CardGame" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/Footer/HBoxContainer" unique_id=433057458]
+[node name="CardGame" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Footer/HBoxContainer" unique_id=433057458]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_sh855")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("3_pi8jx")
@@ -226,9 +235,10 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CardID" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/Footer/HBoxContainer" unique_id=1258568086]
+[node name="CardID" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Footer/HBoxContainer" unique_id=1258568086]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_sh855")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("3_pi8jx")

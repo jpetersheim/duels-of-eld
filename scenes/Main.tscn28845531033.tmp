@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dxwvpmavgi5xn"]
+
+[ext_resource type="Script" uid="uid://cwvt41i0guyit" path="res://scripts/CardManager.gd" id="1_rvslj"]
+[ext_resource type="PackedScene" uid="uid://cl8upmbrssgsy" path="res://scenes/CardSlot.tscn" id="3_0bbpv"]
+[ext_resource type="Script" uid="uid://32vny6ilwckx" path="res://scripts/PlayerHand.gd" id="3_rarhs"]
+[ext_resource type="Script" uid="uid://covm4a4ndow5j" path="res://scripts/Deck.gd" id="4_vcsgt"]
+[ext_resource type="Texture2D" uid="uid://eu127qx8rymu" path="res://graphics/textures/Card Back.png" id="5_c01mt"]
+[ext_resource type="Script" uid="uid://dvsvgv7tcoky4" path="res://scenes/InputManager.gd" id="6_c01mt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpyuh"]
+size = Vector2(288, 408)
+
+[node name="Main" type="Node2D" unique_id=2071292558]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1800139046]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.83137256, 0.83137256, 0.83137256, 1)
+
+[node name="CardManager" type="Node2D" parent="." unique_id=1252921172]
+script = ExtResource("1_rvslj")
+
+[node name="CardSlot" parent="." unique_id=1733596558 instance=ExtResource("3_0bbpv")]
+position = Vector2(1176, 536)
+scale = Vector2(0.5, 0.5)
+
+[node name="CardSlot2" parent="." unique_id=975968076 instance=ExtResource("3_0bbpv")]
+position = Vector2(1024, 536)
+scale = Vector2(0.5, 0.5)
+
+[node name="CardSlot3" parent="." unique_id=857559309 instance=ExtResource("3_0bbpv")]
+position = Vector2(1328, 536)
+scale = Vector2(0.5, 0.5)
+
+[node name="CardSlot4" parent="." unique_id=1193285382 instance=ExtResource("3_0bbpv")]
+position = Vector2(1480, 536)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlayerHand" type="Node2D" parent="." unique_id=1802429117]
+script = ExtResource("3_rarhs")
+
+[node name="Deck" type="Node2D" parent="." unique_id=1160720159]
+position = Vector2(100, 900)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("4_vcsgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Deck" unique_id=130579102]
+texture = ExtResource("5_c01mt")
+
+[node name="Area2D" type="Area2D" parent="Deck" unique_id=1064276832]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D" unique_id=421642079]
+shape = SubResource("RectangleShape2D_fpyuh")
+
+[node name="InputManager" type="Node2D" parent="." unique_id=366762568]
+script = ExtResource("6_c01mt")

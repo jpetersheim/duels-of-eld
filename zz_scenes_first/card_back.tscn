@@ -3,28 +3,30 @@
 [ext_resource type="Texture2D" uid="uid://eu127qx8rymu" path="res://graphics/textures/Card Back.png" id="1_6rhrl"]
 [ext_resource type="Texture2D" uid="uid://ck5rhjb1nl3c7" path="res://graphics/doe_icons/doe_backicon.png" id="2_gbyfy"]
 
-[node name="Card Back" type="Node2D" unique_id=1917187597]
-
-[node name="Control" type="Control" parent="." unique_id=372787478]
+[node name="CardBack" type="Control" unique_id=372787478]
+custom_minimum_size = Vector2(288, 408)
+custom_maximum_size = Vector2(288, 408)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 112.0
 offset_bottom = 84.0
+pivot_offset = Vector2(144, 204)
+mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1726055956]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1726055956]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_6rhrl")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/TextureRect" unique_id=1313822926]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect" unique_id=1313822926]
 custom_minimum_size = Vector2(288, 408)
 custom_maximum_size = Vector2(288, 408)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Control/TextureRect/HBoxContainer" unique_id=536773152]
+[node name="TextureRect" type="TextureRect" parent="TextureRect/HBoxContainer" unique_id=536773152]
 layout_mode = 2
 texture = ExtResource("2_gbyfy")
 expand_mode = 2

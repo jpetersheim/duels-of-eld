@@ -19,6 +19,11 @@
 			"uuid": "6012dccf-4110-4b3b-96f1-159c9197c831",
 			"title": "Design Work",
 			"color": "e0dd08"
+		},
+		{
+			"uuid": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"title": "Development",
+			"color": "1bb006"
 		}
 	],
 	"stages": [
@@ -26,20 +31,11 @@
 			"uuid": "56175b6b-2f86-49e6-b106-2f032efb2da9",
 			"title": "Todo",
 			"tasks": [
-				"5f637ee1-1e6a-49c0-8911-a924403e2f75",
-				"371b4b4b-2534-4e42-bd2a-f5c5058163dd",
-				"5e46a162-8231-44e2-99e1-2cd166f39f4a",
-				"e4e738f1-c267-4df9-a6c2-bff0d7a99ccc",
-				"971df27b-30a7-46b6-a02a-fffe6bfbd64d",
-				"919ae30e-a07b-4e83-9563-a7c85c7cba29",
-				"547a9c7f-e16f-4381-8fa7-c224f24c7c26",
-				"fba5884e-ad23-4085-93e4-0d6788fb558d",
-				"8269ded5-fd0e-44fb-9d89-3ae77fb0bb2b",
-				"79b840b2-6fc2-4e98-9a3e-45d1408269ed",
-				"dcbfa230-0494-4913-8a3f-6c6b87a683ef",
-				"bd4aafd9-b191-4fcc-a58e-bd049974ef00",
-				"f00a2ca7-d46a-4cef-98e1-eea1528896a3",
-				"7ffb6e1e-6296-48fb-a681-73aba0550559"
+				"192ccde7-a7e0-4d16-a7db-c9ee538e0025",
+				"3e38b957-6e26-4e8b-9b6b-c79e72115c51",
+				"c95d5fb6-dd1a-4431-b4bb-93eda9d0bd75",
+				"b182993f-ac35-481d-860b-00bd09cfba2d",
+				"45e43dd5-f541-4e59-b3ba-cf58ccac7c67"
 			]
 		},
 		{
@@ -47,15 +43,54 @@
 			"title": "Doing",
 			"tasks": [
 				"f9c11be6-bfe9-4cbf-9c9d-1a673ed2bacc",
-				"3e38b957-6e26-4e8b-9b6b-c79e72115c51"
+				"08eb47c2-f340-4367-9989-bdbe3df41995",
+				"bd4aafd9-b191-4fcc-a58e-bd049974ef00"
 			]
 		},
 		{
 			"uuid": "f910352f-acc3-4092-94b3-025a9c688476",
 			"title": "Done",
 			"tasks": [
+				"984eb468-6ab4-4962-bfc3-ef9e370d139e",
+				"5f637ee1-1e6a-49c0-8911-a924403e2f75"
+			]
+		},
+		{
+			"uuid": "205914f5-dfc9-4098-bc9f-ce5517837374",
+			"title": "Bugs",
+			"tasks": []
+		},
+		{
+			"uuid": "95797703-cf5a-499e-9750-ccacd7fb16f4",
+			"title": "Backlog",
+			"tasks": [
+				"f00a2ca7-d46a-4cef-98e1-eea1528896a3",
+				"dcbfa230-0494-4913-8a3f-6c6b87a683ef",
+				"79b840b2-6fc2-4e98-9a3e-45d1408269ed",
+				"547a9c7f-e16f-4381-8fa7-c224f24c7c26",
+				"fba5884e-ad23-4085-93e4-0d6788fb558d",
 				"ddc76966-1f8a-4008-8274-f2ac1c92353f",
-				"641726db-5e08-497d-adcb-e57b4631d983"
+				"641726db-5e08-497d-adcb-e57b4631d983",
+				"8269ded5-fd0e-44fb-9d89-3ae77fb0bb2b",
+				"b0cb338c-cfc9-4d49-8d22-ed6677d37e2a",
+				"73076300-2144-4748-a729-d6b75b00993a",
+				"371b4b4b-2534-4e42-bd2a-f5c5058163dd",
+				"e4e738f1-c267-4df9-a6c2-bff0d7a99ccc",
+				"971df27b-30a7-46b6-a02a-fffe6bfbd64d",
+				"919ae30e-a07b-4e83-9563-a7c85c7cba29",
+				"5e46a162-8231-44e2-99e1-2cd166f39f4a"
+			]
+		},
+		{
+			"uuid": "1d84f03b-e672-431f-adbc-75455ff15dc4",
+			"title": "Ideas",
+			"tasks": [
+				"7ffb6e1e-6296-48fb-a681-73aba0550559",
+				"e7fb5537-09b8-419f-9747-0ad383681280",
+				"e87040c4-b23a-4013-aecc-d6d0fe64e15d",
+				"a4723594-6fdc-404f-af1d-6740bc7e869e",
+				"ca72eb7f-dadb-4ddc-a5f6-467e7638d745",
+				"a022d543-78e1-4085-acc9-c9d1ac4cad39"
 			]
 		}
 	],
@@ -111,7 +146,7 @@
 		},
 		{
 			"uuid": "5f637ee1-1e6a-49c0-8911-a924403e2f75",
-			"title": "Create Database",
+			"title": "Create Database (GDSQL)",
 			"description": "",
 			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
 			"steps": []
@@ -120,21 +155,21 @@
 			"uuid": "547a9c7f-e16f-4381-8fa7-c224f24c7c26",
 			"title": "Create Home Page",
 			"description": "",
-			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
 			"steps": []
 		},
 		{
 			"uuid": "fba5884e-ad23-4085-93e4-0d6788fb558d",
 			"title": "Create Navigation",
 			"description": "",
-			"category": "976a3c30-86c9-433b-8cb7-2057405d57eb",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
 			"steps": []
 		},
 		{
 			"uuid": "8269ded5-fd0e-44fb-9d89-3ae77fb0bb2b",
 			"title": "Create Card View page",
 			"description": "",
-			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
 			"steps": []
 		},
 		{
@@ -148,14 +183,14 @@
 			"uuid": "dcbfa230-0494-4913-8a3f-6c6b87a683ef",
 			"title": "Create Deck Building / Editing page",
 			"description": "",
-			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
 			"steps": []
 		},
 		{
 			"uuid": "bd4aafd9-b191-4fcc-a58e-bd049974ef00",
 			"title": "Create Game Board",
 			"description": "",
-			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
 			"steps": []
 		},
 		{
@@ -185,18 +220,114 @@
 			"description": "",
 			"category": "976a3c30-86c9-433b-8cb7-2057405d57eb",
 			"steps": []
+		},
+		{
+			"uuid": "984eb468-6ab4-4962-bfc3-ef9e370d139e",
+			"title": "Nakama server set up",
+			"description": "",
+			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"steps": []
+		},
+		{
+			"uuid": "192ccde7-a7e0-4d16-a7db-c9ee538e0025",
+			"title": "Nakama client object & integration",
+			"description": "",
+			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
+			"steps": []
+		},
+		{
+			"uuid": "e7fb5537-09b8-419f-9747-0ad383681280",
+			"title": "Friends List",
+			"description": "",
+			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"steps": []
+		},
+		{
+			"uuid": "e87040c4-b23a-4013-aecc-d6d0fe64e15d",
+			"title": "Trading of Cards",
+			"description": "",
+			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"steps": []
+		},
+		{
+			"uuid": "b0cb338c-cfc9-4d49-8d22-ed6677d37e2a",
+			"title": "Create world map and points of interest",
+			"description": "",
+			"category": "6012dccf-4110-4b3b-96f1-159c9197c831",
+			"steps": []
+		},
+		{
+			"uuid": "73076300-2144-4748-a729-d6b75b00993a",
+			"title": "Create NPCs and their decks",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "a4723594-6fdc-404f-af1d-6740bc7e869e",
+			"title": "Guilds",
+			"description": "",
+			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"steps": []
+		},
+		{
+			"uuid": "ca72eb7f-dadb-4ddc-a5f6-467e7638d745",
+			"title": "Characters",
+			"description": "",
+			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"steps": []
+		},
+		{
+			"uuid": "a022d543-78e1-4085-acc9-c9d1ac4cad39",
+			"title": "Character Customization",
+			"description": "",
+			"category": "37c4666c-fd5e-47c2-a363-e799a10cb084",
+			"steps": []
+		},
+		{
+			"uuid": "08eb47c2-f340-4367-9989-bdbe3df41995",
+			"title": "Complete Card Game Tutorial",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "c95d5fb6-dd1a-4431-b4bb-93eda9d0bd75",
+			"title": "Allow discarding cards",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "b182993f-ac35-481d-860b-00bd09cfba2d",
+			"title": "When hovering a card on the field, show big picture of it on left",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "45e43dd5-f541-4e59-b3ba-cf58ccac7c67",
+			"title": "Action log in bottom right - show what cards are played and what attacks are used",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
 		}
 	],
 	"layout": {
 		"columns": [
 			[
-				"56175b6b-2f86-49e6-b106-2f032efb2da9"
+				"56175b6b-2f86-49e6-b106-2f032efb2da9",
+				"95797703-cf5a-499e-9750-ccacd7fb16f4"
 			],
 			[
 				"2312e9a8-a088-4669-9c1c-dc59d2991d85"
 			],
 			[
 				"f910352f-acc3-4092-94b3-025a9c688476"
+			],
+			[
+				"205914f5-dfc9-4098-bc9f-ce5517837374",
+				"1d84f03b-e672-431f-adbc-75455ff15dc4"
 			]
 		]
 	}

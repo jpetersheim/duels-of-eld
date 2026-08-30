@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cyfp6tj3t5gt5"]
+
+[ext_resource type="Script" uid="uid://blhayhvlb3hvs" path="res://scripts/OpponentSlotCard.gd" id="1_k50s5"]
+[ext_resource type="Texture2D" uid="uid://bfc1uca5p68ho" path="res://graphics/textures/cardslot12.png" id="2_ji8wt"]
+
+[node name="OpponentCardSlot" type="Node2D" unique_id=1733596558]
+z_index = -2
+scale = Vector2(0.35, 0.35)
+script = ExtResource("1_k50s5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=542750064]
+texture = ExtResource("2_ji8wt")

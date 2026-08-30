@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bxno2apu2rqp7"]
+
+[ext_resource type="Script" uid="uid://keavgtatj50m" path="res://scripts/OpponentCard.gd" id="1_7ug0v"]
+[ext_resource type="Texture2D" uid="uid://eu127qx8rymu" path="res://graphics/textures/Card Back.png" id="2_h8n37"]
+
+[node name="OpponentDeck" type="Node2D" unique_id=4756924]
+z_index = -2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_7ug0v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1464714818]
+texture = ExtResource("2_h8n37")
+
+[node name="NumInDeck" type="RichTextLabel" parent="." unique_id=1977063531]
+offset_left = -80.0
+offset_top = -236.0
+offset_right = -40.0
+offset_bottom = -196.0
+scale = Vector2(4, 4)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

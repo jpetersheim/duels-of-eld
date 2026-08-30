@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dxwvpmavgi5xn"]
+
+[ext_resource type="Script" uid="uid://cwvt41i0guyit" path="res://scenes/CardManager.gd" id="1_rvslj"]
+[ext_resource type="PackedScene" uid="uid://brvji3qeqf7d7" path="res://scenes/Card.tscn" id="2_0bbpv"]
+
+[node name="Main" type="Node2D" unique_id=2071292558]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1800139046]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.83137256, 0.83137256, 0.83137256, 1)
+
+[node name="CardManager" type="Node2D" parent="." unique_id=1252921172]
+script = ExtResource("1_rvslj")
+
+[node name="Card" parent="CardManager" unique_id=1569382655 instance=ExtResource("2_0bbpv")]
+
+[node name="Card2" parent="CardManager" unique_id=833120238 instance=ExtResource("2_0bbpv")]
+position = Vector2(464, 8)
