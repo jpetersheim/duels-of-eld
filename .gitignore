@@ -1,6 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-addons/
 audio/Sound Fx Starter Pack Vol. 1
-demo/

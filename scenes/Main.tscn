@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://b2ipkejd4blqv" path="res://scripts/OpponentDeck.gd" id="12_qmy6f"]
 [ext_resource type="Texture2D" uid="uid://bk1wrnfq3snkt" path="res://graphics/card_icons/health.png" id="14_3p2gp"]
 [ext_resource type="Texture2D" uid="uid://cd3caneet8sga" path="res://graphics/card_icons/melee.png" id="15_cvmbd"]
+[ext_resource type="Script" uid="uid://cvhptqeydaah" path="res://scripts/ActionLog.gd" id="17_ft6cd"]
 
 [node name="Main" type="Node2D" unique_id=2071292558]
 
@@ -138,36 +139,36 @@ script = ExtResource("12_qmy6f")
 [node name="OpponentSlotsActions" type="Node2D" parent="." unique_id=394542439]
 
 [node name="OpponentSlotAction1" parent="OpponentSlotsActions" unique_id=1867372692 instance=ExtResource("8_jlsqs")]
-position = Vector2(792, 456)
+position = Vector2(792, 348.00012)
 
 [node name="OpponentSlotAction2" parent="OpponentSlotsActions" unique_id=668784799 instance=ExtResource("8_jlsqs")]
-position = Vector2(904, 456)
+position = Vector2(904, 348.00012)
 
 [node name="OpponentSlotAction3" parent="OpponentSlotsActions" unique_id=2090448548 instance=ExtResource("8_jlsqs")]
-position = Vector2(1016, 456)
+position = Vector2(1016, 348.00012)
 
 [node name="OpponentSlotAction4" parent="OpponentSlotsActions" unique_id=1182864683 instance=ExtResource("8_jlsqs")]
-position = Vector2(1128, 456)
+position = Vector2(1128, 348.00012)
 
 [node name="OpponentSlotDiscardAction" parent="OpponentSlotsActions" unique_id=1226035295 instance=ExtResource("8_jlsqs")]
-position = Vector2(648, 456)
+position = Vector2(648, 348.00012)
 
 [node name="OpponentSlotsGear" type="Node2D" parent="." unique_id=598131018]
 
 [node name="OpponentSlotGear1" parent="OpponentSlotsGear" unique_id=2100651580 instance=ExtResource("8_jlsqs")]
-position = Vector2(791.99994, 304.00003)
+position = Vector2(792, 196.00005)
 
 [node name="OpponentSlotGear2" parent="OpponentSlotsGear" unique_id=750690944 instance=ExtResource("8_jlsqs")]
-position = Vector2(904, 304)
+position = Vector2(904, 196.00005)
 
 [node name="OpponentSlotGear3" parent="OpponentSlotsGear" unique_id=1404608244 instance=ExtResource("8_jlsqs")]
-position = Vector2(1016, 304)
+position = Vector2(1016, 196.00005)
 
 [node name="OpponentSlotGear4" parent="OpponentSlotsGear" unique_id=2138489018 instance=ExtResource("8_jlsqs")]
-position = Vector2(1128, 304)
+position = Vector2(1128, 196.00005)
 
 [node name="OpponentSlotDiscardGear" parent="OpponentSlotsGear" unique_id=260049375 instance=ExtResource("8_jlsqs")]
-position = Vector2(648, 304)
+position = Vector2(648, 196.00005)
 
 [node name="OpponentStats" type="Node2D" parent="." unique_id=1151377169]
 position = Vector2(1528, 400)
@@ -212,17 +213,17 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="AttackButton" type="Button" parent="." unique_id=197950584]
-offset_left = 1632.0
-offset_top = 850.0
-offset_right = 1710.0
-offset_bottom = 881.0
+offset_left = 1552.0
+offset_top = 760.0
+offset_right = 1630.0
+offset_bottom = 791.0
 text = "Attack"
 
 [node name="EndTurnButton" type="Button" parent="." unique_id=1193069400]
-offset_left = 1752.0
-offset_top = 850.0
-offset_right = 1830.0
-offset_bottom = 881.0
+offset_left = 1696.0
+offset_top = 760.0
+offset_right = 1774.0
+offset_bottom = 791.0
 text = "End Turn"
 
 [node name="TurnCounter" type="RichTextLabel" parent="." unique_id=2013917421]
@@ -234,6 +235,33 @@ scale = Vector2(2, 2)
 text = "Turn"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ActionLogBox" type="Node2D" parent="." unique_id=140169498]
+position = Vector2(1600, 830)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ActionLogBox" unique_id=1591264826]
+offset_right = 300.0
+offset_bottom = 30.0
+text = "Battle Action History"
+
+[node name="ColorRect2" type="ColorRect" parent="ActionLogBox" unique_id=565269863]
+custom_minimum_size = Vector2(300, 200)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 230.0
+color = Color(0.92291206, 0.8023042, 0.69149274, 1)
+
+[node name="ActionLog" type="ScrollContainer" parent="ActionLogBox" unique_id=1288250101]
+custom_minimum_size = Vector2(300, 200)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 230.0
+follow_focus = true
+script = ExtResource("17_ft6cd")
+
+[node name="LogContainer" type="VBoxContainer" parent="ActionLogBox/ActionLog" unique_id=212191668]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [connection signal="pressed" from="AttackButton" to="BattleManager" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]

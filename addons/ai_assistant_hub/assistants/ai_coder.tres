@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AIAssistantResource" format=3 uid="uid://0iw1eknlgvb8"]
+
+[ext_resource type="Resource" uid="uid://c0xq2vafep0gu" path="res://addons/ai_assistant_hub/llm_providers/ollama.tres" id="1_wmu8k"]
+[ext_resource type="Script" uid="uid://b7ls0gkm1bhl2" path="res://addons/ai_assistant_hub/quick_prompts/ai_quick_prompt_resource.gd" id="2_d7b6o"]
+[ext_resource type="Script" uid="uid://cff2x8gn7cbn3" path="res://addons/ai_assistant_hub/assistants/ai_assistant_resource.gd" id="3_cor7a"]
+
+[resource]
+script = ExtResource("3_cor7a")
+type_name = "Coder"
+ai_model = "qwen2.5-coder:7b"
+llm_provider = ExtResource("1_wmu8k")
+ai_description = "You are a useful Godot AI assistant. You will help create a game in the Godot 4 engine."
