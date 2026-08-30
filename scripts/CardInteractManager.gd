@@ -1,22 +1,29 @@
 extends Node2D
 
+@onready var action_log = $"../ActionLogBox/ActionLog"
+
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
 
 var screen_size
 var card_being_dragged
 var is_hovering_on_card
+
 var player_hand_reference
 var stats_manager_ref
+var player_deck_ref
 
 var player_cards_on_field = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	
 	player_hand_reference = $"../PlayerHand"
-	$"../InputManager".connect("left_mouse_button_released", on_left_click_released)
+	player_deck_ref = $"../PlayerDeck"
 	stats_manager_ref = $"../StatsManager"
+		
+	$"../InputManager".connect("left_mouse_button_released", on_left_click_released)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,13 +41,19 @@ func start_drag(card):
 func finish_drag():
 	card_being_dragged.scale = Vector2(Global.HAND_CARD_SCALE + 0.05, Global.HAND_CARD_SCALE + 0.05)
 	var card_slot_found = raycast_check_for_card_slot()
-	if card_slot_found and not card_slot_found.card_in_slot and card_slot_found.card_slot_type != "Opponent":
+	
+	#Play card in normal card slots
+	if card_slot_found and not card_slot_found.card_in_slot and card_slot_found.card_slot_type == "Slot":
 		if card_being_dragged.card_type == card_slot_found.card_in_slot_type:
 			card_being_dragged.scale = Vector2(Global.FIELD_CARD_SCALE, Global.FIELD_CARD_SCALE)
 			card_being_dragged.z_index = -1
 			card_being_dragged.card_slot_card_is_in = card_slot_found
+			
 			player_hand_reference.remove_card_from_hand(card_being_dragged)
 			player_cards_on_field.append(card_being_dragged)
+			
+			var log_msg = "[color=cyan]%s[/color] played [color=green]%s[/color] card [color=yellow]%s[/color]." % ["Player", card_being_dragged.card_type, card_being_dragged.card_name]
+			action_log.add_log(log_msg)
 			
 			# card dropped in empty slot
 			card_being_dragged.position = card_slot_found.position
@@ -51,7 +64,33 @@ func finish_drag():
 			stats_manager_ref.update_stats("Player", player_cards_on_field)
 			
 			return
+	
+	#Play card in Discard slot
+	if card_slot_found and card_slot_found.card_slot_type == "Discard":
+		if card_being_dragged.card_type == card_slot_found.card_in_slot_type:
+			card_being_dragged.scale = Vector2(Global.FIELD_CARD_SCALE, Global.FIELD_CARD_SCALE)
+			card_being_dragged.z_index = -1
+			card_being_dragged.card_slot_card_is_in = card_slot_found
 			
+			player_hand_reference.remove_card_from_hand(card_being_dragged)
+			if card_being_dragged.card_type == "Gear":
+				player_deck_ref.player_gear_discard.append(card_being_dragged)
+			elif card_being_dragged.card_type == "Action":
+				player_deck_ref.player_action_discard.append(card_being_dragged)
+				
+			var log_msg = "[color=cyan]%s[/color] discarded [color=green]%s[/color] card [color=yellow]%s[/color]." % ["Player", card_being_dragged.card_type, card_being_dragged.card_name]
+			action_log.add_log(log_msg)
+			
+			# card dropped in empty slot
+			card_being_dragged.position = card_slot_found.position
+			card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
+			card_slot_found.card_in_slot = true
+			card_being_dragged = null
+			
+			stats_manager_ref.update_stats("Player", player_cards_on_field)
+			
+			return
+	
 	player_hand_reference.add_card_to_hand(card_being_dragged, Global.CARD_MOVE_SPEED)
 	card_being_dragged = null
 

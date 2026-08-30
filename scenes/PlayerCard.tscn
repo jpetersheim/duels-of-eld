@@ -71,7 +71,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_40ytf"]
-resource_name = "card_flip"
+resource_name = "card_flip_to_front"
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -137,7 +137,7 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5273u"]
 _data = {
 &"RESET": SubResource("Animation_qf083"),
-&"card_flip": SubResource("Animation_40ytf")
+&"card_flip_to_front": SubResource("Animation_40ytf")
 }
 
 [node name="Card" type="Node2D" unique_id=1569382655]
@@ -180,7 +180,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Health" type="RichTextLabel" parent="CardDetails" unique_id=702657039]
+[node name="Block" type="RichTextLabel" parent="CardDetails" unique_id=702657039]
 modulate = Color(0.288518, 0.28851798, 0.28851798, 1)
 offset_left = 20.0
 offset_top = 14.0

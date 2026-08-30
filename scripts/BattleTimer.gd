@@ -1,0 +1,5 @@
+extends Timer
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	self.one_shot = true

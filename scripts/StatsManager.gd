@@ -13,16 +13,20 @@ var opponent_health
 var player_attack = 0
 var opponent_attack = 0
 
+var player_block = 0
+var opponent_block = 0
+
 func _ready() -> void:
 	player_health = STARTING_HEALTH
 	opponent_health = STARTING_HEALTH
-	update_health("Start",0)
+	update_health("Start",0,0)
 
-func update_health(attacker, attacker_dmg):
+func update_health(attacker, attacker_dmg, damage_blocked):
+	var calc_dmg = max(0, attacker_dmg-damage_blocked)
 	if attacker == "Opponent":
-		player_health -= attacker_dmg
+		player_health -= calc_dmg
 	elif attacker == "Player":
-		opponent_health -= attacker_dmg
+		opponent_health -= calc_dmg
 	
 	if opponent_health < 0:
 		opponent_health = 0
@@ -46,4 +50,17 @@ func update_stats(entity, cards_on_field_array):
 	
 	$"../OpponentStats/Attack".text = str(opponent_attack)
 	$"../PlayerStats/Attack".text = str(player_attack)
+	
+	#block
+	if entity == "Opponent":
+		opponent_block = 0
+		for card in cards_on_field_array:
+			opponent_block += card.card_block
+	elif entity == "Player":
+		player_block = 0
+		for card in cards_on_field_array:
+			player_block += card.card_block
+	
+	$"../OpponentStats/Block".text = str(opponent_block)
+	$"../PlayerStats/Block".text = str(player_block)
 	

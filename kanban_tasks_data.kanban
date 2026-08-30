@@ -33,16 +33,20 @@
 			"tasks": [
 				"192ccde7-a7e0-4d16-a7db-c9ee538e0025",
 				"3e38b957-6e26-4e8b-9b6b-c79e72115c51",
-				"c95d5fb6-dd1a-4431-b4bb-93eda9d0bd75",
 				"b182993f-ac35-481d-860b-00bd09cfba2d",
-				"45e43dd5-f541-4e59-b3ba-cf58ccac7c67"
+				"16d1d989-5a23-408a-8b2e-c310b2e10976",
+				"edd88e40-4465-4473-b11a-575e9f64caf3",
+				"ea0decc8-87ac-4812-8445-3dbc1e950025",
+				"5772bb42-1cea-438b-add5-eccf584f6b02",
+				"843f765c-62ef-4f28-8e03-d91a8004902a",
+				"f0772801-745c-464d-8f2e-175fe14ce6da",
+				"9e08f6f6-1f5e-4d16-93b2-357bc839d086"
 			]
 		},
 		{
 			"uuid": "2312e9a8-a088-4669-9c1c-dc59d2991d85",
 			"title": "Doing",
 			"tasks": [
-				"f9c11be6-bfe9-4cbf-9c9d-1a673ed2bacc",
 				"08eb47c2-f340-4367-9989-bdbe3df41995",
 				"bd4aafd9-b191-4fcc-a58e-bd049974ef00"
 			]
@@ -52,7 +56,9 @@
 			"title": "Done",
 			"tasks": [
 				"984eb468-6ab4-4962-bfc3-ef9e370d139e",
-				"5f637ee1-1e6a-49c0-8911-a924403e2f75"
+				"45e43dd5-f541-4e59-b3ba-cf58ccac7c67",
+				"c95d5fb6-dd1a-4431-b4bb-93eda9d0bd75",
+				"f9c11be6-bfe9-4cbf-9c9d-1a673ed2bacc"
 			]
 		},
 		{
@@ -140,13 +146,6 @@
 		{
 			"uuid": "919ae30e-a07b-4e83-9563-a7c85c7cba29",
 			"title": "Create Decks Table",
-			"description": "",
-			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
-			"steps": []
-		},
-		{
-			"uuid": "5f637ee1-1e6a-49c0-8911-a924403e2f75",
-			"title": "Create Database (GDSQL)",
 			"description": "",
 			"category": "dcfd7bd6-e6fa-4e3b-a372-23d59d954b92",
 			"steps": []
@@ -308,6 +307,55 @@
 		{
 			"uuid": "45e43dd5-f541-4e59-b3ba-cf58ccac7c67",
 			"title": "Action log in bottom right - show what cards are played and what attacks are used",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "16d1d989-5a23-408a-8b2e-c310b2e10976",
+			"title": "Add second deck with separate cards",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "edd88e40-4465-4473-b11a-575e9f64caf3",
+			"title": "Change draw to manual draw at end of turn",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "ea0decc8-87ac-4812-8445-3dbc1e950025",
+			"title": "Disable interacting with cards during the draw",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "5772bb42-1cea-438b-add5-eccf584f6b02",
+			"title": "Discard Pile is adding extra cards, figure out why",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "843f765c-62ef-4f28-8e03-d91a8004902a",
+			"title": "Fix scale of cards going to discard pile",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "f0772801-745c-464d-8f2e-175fe14ce6da",
+			"title": "Fix deck count artifact",
+			"description": "",
+			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
+			"steps": []
+		},
+		{
+			"uuid": "9e08f6f6-1f5e-4d16-93b2-357bc839d086",
+			"title": "Clean up tech debt",
 			"description": "",
 			"category": "9eb6111c-20a9-49b0-b252-d2c9c51580b1",
 			"steps": []

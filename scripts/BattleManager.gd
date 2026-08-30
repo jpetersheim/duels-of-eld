@@ -1,7 +1,6 @@
 extends Node
 
-var battle_timer
-
+var action_log
 var stats_manager_ref
 var card_to_play
 var turn_counter
@@ -13,14 +12,13 @@ var opponent_cards_on_field = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	action_log = $"../ActionLogBox/ActionLog"
 	stats_manager_ref = $"../StatsManager"
-	
-	battle_timer = $"../BattleTimer"
-	battle_timer.one_shot = true
-	battle_timer.wait_time = 1.0
 	
 	turn_counter = 1
 	$"../TurnCounter".text = "Turn " + str(turn_counter) + ": Player"
+	var log_msg = "[color=black]Turn %s:[/color] [color=cyan]%s[/color][color=black].[/color]" % [turn_counter, "Player"]
+	action_log.add_log(log_msg)
 	
 	if turn_counter == 1:
 		stats_manager_ref.player_attacks_this_turn = 0
@@ -48,9 +46,11 @@ func _on_end_turn_button_pressed() -> void:
 	$"../AttackButton".disabled = true
 	
 	turn_counter += 1
-	$"../TurnCounter".text = "Turn " + str(turn_counter) + ": Opponent"
-		
 	$"../PlayerDeck".draw_at_end_turn()
+	
+	$"../TurnCounter".text = "Turn " + str(turn_counter) + ": Opponent"
+	var log_msg = "[color=black]Turn %s:[/color] [color=red]%s[/color][color=black].[/color]" % [turn_counter, "Opponent"]
+	action_log.add_log(log_msg)
 	
 	stats_manager_ref.player_attacks_this_turn = stats_manager_ref.player_default_attacks
 	
@@ -58,7 +58,7 @@ func _on_end_turn_button_pressed() -> void:
 
 
 func _on_attack_button_pressed() -> void:
-	direct_attack("Player", stats_manager_ref.player_attack)
+	direct_attack("Player", stats_manager_ref.player_attack, stats_manager_ref.opponent_block)
 
 
 func opponent_turn():
@@ -67,12 +67,12 @@ func opponent_turn():
 		opponent_hand_card_types.append(card.card_type)
 	
 	#Wait 1s before making any moves
-	await wait(1.0)
+	await Global.wait(1.0)
 	
 	#Opponents Turn
-	if $"../OpponentDeck".opponent_deck.size() != 0:
+	if $"../OpponentDeck".opponent_gear_deck.size() != 0:
 		#Wait 1s before making any moves
-		await wait(1.0)
+		await Global.wait(1.0)
 	
 	# Check if free action slots, if no end turn
 	if (opponent_empty_action_slots.size() != 0 or "Action" in opponent_hand_card_types) and (opponent_empty_gear_slots.size() != 0 or "Gear" in opponent_hand_card_types):
@@ -81,7 +81,7 @@ func opponent_turn():
 	#update stats
 	stats_manager_ref.update_stats("Opponent", opponent_cards_on_field)
 	
-	await wait(1.0)
+	await Global.wait(1.0)
 	
 	#opponent attacks
 	if turn_counter == 1:
@@ -90,7 +90,7 @@ func opponent_turn():
 		stats_manager_ref.opponent_attacks_this_turn = stats_manager_ref.opponent_default_attacks
 	
 	while stats_manager_ref.opponent_attacks_this_turn > 0:
-		direct_attack("Opponent", stats_manager_ref.opponent_attack)
+		direct_attack("Opponent", stats_manager_ref.opponent_attack, stats_manager_ref.player_block)
 		
 	end_opponent_turn()
 
@@ -121,27 +121,26 @@ func play_card_with_highest_attack():
 		opponent_cards_on_field.append(card_to_play)
 	
 	#Wait 1s before making any moves
-	await wait(1)
+	await Global.wait(1)
 
 
-func wait(wait_time):
-	#wait time in seconds
-	battle_timer.wait_time = wait_time
-	battle_timer.start()
-	await battle_timer.timeout
-
-
-func direct_attack(attacker, attacker_dmg):
+func direct_attack(attacker, attacker_dmg, defender_block):
 	if attacker == "Player":
 		stats_manager_ref.player_attacks_this_turn -= 1
 		if stats_manager_ref.player_attacks_this_turn == 0:
 			$"../AttackButton".visible = false
 			$"../AttackButton".disabled = true
+			
+		var log_msg = "[color=cyan]%s[/color] attacked for [color=orange]%s[/color] damage. [color=red]%s[/color] blocked for [color=gray]%s[/color] damage." % ["Player", attacker_dmg, "Opponent", defender_block]
+		action_log.add_log(log_msg)
 	
 	if attacker == "Opponent":
 		stats_manager_ref.opponent_attacks_this_turn -= 1
+		
+		var log_msg = "[color=red]%s[/color] attacked for [color=orange]%s[/color] damage. [color=cyan]%s[/color] blocked for [color=gray]%s[/color] damage." % ["Opponent", attacker_dmg, "Player", defender_block]
+		action_log.add_log(log_msg)
 	
-	stats_manager_ref.update_health(attacker, attacker_dmg)
+	stats_manager_ref.update_health(attacker, attacker_dmg, defender_block)
 
 
 func end_opponent_turn():
@@ -152,6 +151,8 @@ func end_opponent_turn():
 	
 	turn_counter += 1
 	$"../TurnCounter".text = "Turn " + str(turn_counter) + ": Player"
+	var log_msg = "[color=black]Turn %s:[/color] [color=cyan]%s[/color][color=black].[/color]" % [turn_counter, "Player"]
+	action_log.add_log(log_msg)
 	
 	player_turn()
 

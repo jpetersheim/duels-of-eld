@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cwvt41i0guyit" path="res://scripts/CardInteractManager.gd" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://co8my1fujbu58" path="res://scripts/BattleManager.gd" id="1_wp0k4"]
 [ext_resource type="PackedScene" uid="uid://cl8upmbrssgsy" path="res://scenes/PlayerCardSlot.tscn" id="3_0bbpv"]
-[ext_resource type="Script" uid="uid://ci5g1xvh612dw" path="res://scripts/BattleTimer.gd" id="3_nfivy"]
 [ext_resource type="Script" uid="uid://32vny6ilwckx" path="res://scripts/PlayerHand.gd" id="3_rarhs"]
 [ext_resource type="Script" uid="uid://joh7634gh57e" path="res://scripts/StatsManager.gd" id="4_cvmbd"]
 [ext_resource type="PackedScene" uid="uid://cvkjd8rxlnmrc" path="res://scenes/PlayerDeck.tscn" id="4_vcsgt"]
@@ -15,45 +14,16 @@
 [ext_resource type="PackedScene" uid="uid://cyfp6tj3t5gt5" path="res://scenes/OpponentCardSlot.tscn" id="8_jlsqs"]
 [ext_resource type="Script" uid="uid://btoh4g01gkkb8" path="res://scripts/OpponentHand.gd" id="10_bjd11"]
 [ext_resource type="Script" uid="uid://b2ipkejd4blqv" path="res://scripts/OpponentDeck.gd" id="12_qmy6f"]
-[ext_resource type="Texture2D" uid="uid://cuiy6t7kj36gb" path="res://graphics/card_icons/block.png" id="13_bb450"]
 [ext_resource type="Texture2D" uid="uid://bk1wrnfq3snkt" path="res://graphics/card_icons/health.png" id="14_3p2gp"]
 [ext_resource type="Texture2D" uid="uid://cd3caneet8sga" path="res://graphics/card_icons/melee.png" id="15_cvmbd"]
 [ext_resource type="Script" uid="uid://cvhptqeydaah" path="res://scripts/ActionLog.gd" id="17_ft6cd"]
 
 [node name="Main" type="Node2D" unique_id=2071292558]
 
-[node name="ActionLogBox" type="Node2D" parent="." unique_id=140169498]
-position = Vector2(1600, 830)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ActionLogBox" unique_id=1591264826]
-offset_right = 300.0
-offset_bottom = 30.0
-text = "Battle Action History"
-
-[node name="ColorRect2" type="ColorRect" parent="ActionLogBox" unique_id=565269863]
-custom_minimum_size = Vector2(300, 200)
-offset_top = 30.0
-offset_right = 300.0
-offset_bottom = 230.0
-color = Color(0.92291206, 0.8023042, 0.69149274, 1)
-
-[node name="ActionLog" type="ScrollContainer" parent="ActionLogBox" unique_id=1288250101]
-custom_minimum_size = Vector2(300, 200)
-offset_top = 30.0
-offset_right = 300.0
-offset_bottom = 230.0
-follow_focus = true
-script = ExtResource("17_ft6cd")
-
-[node name="LogContainer" type="VBoxContainer" parent="ActionLogBox/ActionLog" unique_id=212191668]
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="BattleManager" type="Node" parent="." unique_id=499387730]
 script = ExtResource("1_wp0k4")
 
-[node name="Timer" type="Timer" parent="." unique_id=1029772504]
-script = ExtResource("3_nfivy")
+[node name="BattleTimer" type="Timer" parent="." unique_id=1029772504]
 
 [node name="InputManager" type="Node2D" parent="." unique_id=1881813253]
 script = ExtResource("6_c01mt")
@@ -117,10 +87,10 @@ position = Vector2(1128, 776)
 position = Vector2(1272, 776)
 script = ExtResource("7_q8u5g")
 
-[node name="PlayerStats" type="Node2D" parent="." unique_id=1515906172]
+[node name="PlayerStats" type="Node2D" parent="." unique_id=55032069]
 position = Vector2(1728, 400)
 
-[node name="Label" type="RichTextLabel" parent="PlayerStats" unique_id=1506610393]
+[node name="Label" type="RichTextLabel" parent="PlayerStats" unique_id=974394103]
 offset_left = -56.0
 offset_top = -48.0
 offset_right = 44.0
@@ -130,11 +100,11 @@ text = "Player"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HealthIcon" type="Sprite2D" parent="PlayerStats" unique_id=1643290490]
+[node name="HealthIcon" type="Sprite2D" parent="PlayerStats" unique_id=1437046128]
 position = Vector2(-39, 41)
 texture = ExtResource("14_3p2gp")
 
-[node name="Health" type="RichTextLabel" parent="PlayerStats" unique_id=946494288]
+[node name="Health" type="RichTextLabel" parent="PlayerStats" unique_id=130410580]
 offset_left = 16.0
 offset_top = 12.0
 offset_right = 66.0
@@ -144,30 +114,16 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="DmgIcon" type="Sprite2D" parent="PlayerStats" unique_id=574378330]
-position = Vector2(-40, 102)
+[node name="DmgIcon" type="Sprite2D" parent="PlayerStats" unique_id=1808038012]
+position = Vector2(-40, 104)
 scale = Vector2(2.4, 2.4)
 texture = ExtResource("15_cvmbd")
 
-[node name="Attack" type="RichTextLabel" parent="PlayerStats" unique_id=1155711057]
+[node name="Attack" type="RichTextLabel" parent="PlayerStats" unique_id=1692416738]
 offset_left = 16.0
 offset_top = 72.0
 offset_right = 66.0
 offset_bottom = 112.0
-scale = Vector2(1.5, 1.5)
-text = "0"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="BlockIcon" type="Sprite2D" parent="PlayerStats" unique_id=996401350]
-position = Vector2(-40, 163)
-texture = ExtResource("13_bb450")
-
-[node name="Block" type="RichTextLabel" parent="PlayerStats" unique_id=124406822]
-offset_left = 16.0
-offset_top = 132.0
-offset_right = 66.0
-offset_bottom = 172.0
 scale = Vector2(1.5, 1.5)
 text = "0"
 horizontal_alignment = 2
@@ -242,7 +198,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="DmgIcon" type="Sprite2D" parent="OpponentStats" unique_id=1771120407]
-position = Vector2(-40, 102)
+position = Vector2(-40, 104)
 scale = Vector2(2.4, 2.4)
 texture = ExtResource("15_cvmbd")
 
@@ -251,20 +207,6 @@ offset_left = 16.0
 offset_top = 72.0
 offset_right = 66.0
 offset_bottom = 112.0
-scale = Vector2(1.5, 1.5)
-text = "0"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="BlockIcon" type="Sprite2D" parent="OpponentStats" unique_id=699229180]
-position = Vector2(-40, 163)
-texture = ExtResource("13_bb450")
-
-[node name="Block" type="RichTextLabel" parent="OpponentStats" unique_id=1031356884]
-offset_left = 16.0
-offset_top = 132.0
-offset_right = 66.0
-offset_bottom = 172.0
 scale = Vector2(1.5, 1.5)
 text = "0"
 horizontal_alignment = 2
@@ -293,6 +235,33 @@ scale = Vector2(2, 2)
 text = "Turn"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ActionLogBox" type="Node2D" parent="." unique_id=140169498]
+position = Vector2(1600, 830)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ActionLogBox" unique_id=1591264826]
+offset_right = 300.0
+offset_bottom = 30.0
+text = "Battle Action History"
+
+[node name="ColorRect2" type="ColorRect" parent="ActionLogBox" unique_id=565269863]
+custom_minimum_size = Vector2(300, 200)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 230.0
+color = Color(0.92291206, 0.8023042, 0.69149274, 1)
+
+[node name="ActionLog" type="ScrollContainer" parent="ActionLogBox" unique_id=1288250101]
+custom_minimum_size = Vector2(300, 200)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 230.0
+follow_focus = true
+script = ExtResource("17_ft6cd")
+
+[node name="LogContainer" type="VBoxContainer" parent="ActionLogBox/ActionLog" unique_id=212191668]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [connection signal="pressed" from="AttackButton" to="BattleManager" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
